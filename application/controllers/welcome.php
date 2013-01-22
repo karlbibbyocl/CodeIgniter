@@ -45,7 +45,11 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$foobar[0]["bar"] = "1";
+		$foobar[1]["bar"] = "2";
+		$foobars = array('foos' => $foobar);
+		$this -> parser -> parse("welcome_message.php", $foobars);
+		//$this->load->view('welcome_message');
 	}
 }
 
